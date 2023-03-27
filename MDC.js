@@ -1,24 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>mdc</title>
-</head>
-<body>
-
-<script>
-function mdc(a,b){
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+})
+function mdc(a, b) {
     if (b===0) {
         return a;
     } else {
         return mdc (b, a% b);
     }
 }
-
-let num1 = prompt("Enter the first number:");
-let num2 = prompt("Enter the second number:");
-let result = mdc(num1,num2);
-alert(result);
-</script>
-
-</body>
-</html>
+rl.question('Digite o primeiro número: ', (a) => {
+    rl.question('Digite o segundo número: ', (b) => {
+        console.log(`O MDC entre ${a} e ${b} é ${mdc(a, b)}`);
+        rl.close();
+    });
+});

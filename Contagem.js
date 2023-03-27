@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Contagem</title>
-  </head>
-  <body>
-    <h1>Result:</h1>
-    <p id="result"></p>
-
-    <script>
-      let array = [1, 3, 2, 4];
-      let N = 4;
-      let count = 0;
-      
-      for (let i = 0; i < array.length; i++) {
-        if (array[i] >= array[0] && array[i] <= N) {
+function countIntegers(data, N) {
+  let count = 0;
+  for (let i = 0; i < data.length; i++) {
+      if (data[i] >= data[0] && data[i] <= N) {
           count++;
-        }
       }
-
-      document.getElementById("result").innerHTML = count;
-    </script>
-  </body>
-</html>
+  }
+  return count;
+}
+let data = [1, 2, 3, 5, 7, 9, 12, 15, 26];
+let N = 8;
+let result = countIntegers(data, N);
+console.log(result);

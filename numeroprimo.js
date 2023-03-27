@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>numeroPrimo</title>
-</head>
-<body>
-
-<script>
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 function numeroPrimo(n) {
     let cont = 0;
     for (let i = 1; i <= n; i++) {
@@ -19,10 +16,7 @@ function numeroPrimo(n) {
         console.log(n + ' e primo')
     }
 }
-
-let num = prompt("Enter a number:");
-numeroPrimo(num);
-</script>
-
-</body>
-</html>
+rl.question('Digite um número: ', (n) => {
+    numeroPrimo(n);
+    rl.close();
+});
