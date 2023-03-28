@@ -15,10 +15,10 @@ function countIntegers(data, N) {
   return count;
 }
 
-rl.question('insira o valor de N: ', (N) => {
-  let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  let result = countIntegers(data, N);
-  console.log(result);
-  rl.close();
-
+rl.question('Digite o número de elementos do vetor: ', (N) => {
+  rl.question('Digite os elementos do vetor: ', (data) => {
+    data = data.split(' ').map(Number);
+    console.log(countIntegers(data, N));
+    rl.close();
+  });
 });
